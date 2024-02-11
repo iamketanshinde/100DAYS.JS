@@ -4,4 +4,8 @@ const status=true;
 
 first="piyush";
 age=30;
-status=false;
+// status=false;
+
+
+const p=document.querySelectorAll('p');
+console.log(p, age);
