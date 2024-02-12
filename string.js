@@ -1,27 +1,41 @@
-const first ='ketan';
-const second ="santosh";
-const last =`shinde`;
+// const first ='ketan';
+// const second ="santosh";
+// const last =`shinde`;
 
-const sentence='she\'s is so  cool'; 
-const sentence2 = "she's is so \"cool\"";
-const sentence3 = `she's is so \"cool\"`;
-
-
-// const hello= "hey my name is "+first+". nice to meet you!";// *(+ can be used for no. in js and for concatination) *it will also work for single quote.
+// const sentence='she\'s is so  cool'; 
+// const sentence2 = "she's is so \"cool\"";
+// const sentence3 = `she's is so \"cool\"`;
 
 
-
-// let hello2 = 'my name is ';//overwriting an variable
-// hello2 = hello2 + first;
-// hello2 = hello2 + '.nice to meet you';
+// // const hello= "hey my name is "+first+". nice to meet you!";// *(+ can be used for no. in js and for concatination) *it will also work for single quote.
 
 
-const hello = ` hello my name is ${first} nice to meeting you. i'm ${1+100}years old`;
+
+// // let hello2 = 'my name is ';//overwriting an variable
+// // hello2 = hello2 + first;
+// // hello2 = hello2 + '.nice to meet you';
 
 
-const html = `
-<div>
-<h1>${first}</h1>
-<p>${hello}</p>
-</div>
-`;
+// const hello = ` hello my name is ${first} nice to meeting you. i'm ${1+100}years old`;
+
+
+// const html = `
+// <div>
+// <h1>${first}</h1>
+// <p>${hello}</p>
+// </div>
+// `;
+
+
+
+
+// section 8....
+const age = 20;
+const name = 'ketan';
+
+const smarties = 20;
+const kids = 3;
+const eachkidgets = Math.round(smarties/kids);
+const dadgets = smarties%kids;
+console.log(`each kids gets ${eachkidgets} .`);
+console.log(`dad gets ${dadgets} smarties`);
