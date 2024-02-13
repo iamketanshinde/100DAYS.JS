@@ -1,5 +1,5 @@
 const person = {
-    age:101;
-    name:"ketan";
-    last:"shinde";
+    age:101,
+    name:"ketan",
+    last:"shinde",
 }
