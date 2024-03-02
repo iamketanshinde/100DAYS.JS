@@ -74,17 +74,16 @@ cardhtml=cardhtml+generateplayercard('wes',12,7);
 cardhtml=cardhtml+generateplayercard('laksh',12,7);
 cardhtml=cardhtml+generateplayercard('kait',12,7);
 cards.innerHTML=(cardhtml);
-div.insertAdjacentElement('afterbegin',cards)
+div.insertAdjacentElement('beforebegin',cards)
 
 // create button :-which is createed in function......!
 
 //select all buttons
-const buttons=document.querySelector('.delete');
-console.log(buttons);
-// create funcrion delete  card
+const buttons=document.querySelectorAll('.delete');
+//make dlte  funtioon
 function deletecard(event){
-   const buttonthatgotclicked=event.currentTarget;
-   buttonthatgotclicked.parentElement.remove();
+    const buttonthatgotclick=event.currentTarget;
+    buttonthatgotclick.parentElement.remove();
 }
-//loop over them andd attach a listener
-buttons.forEach(button=>button.addEventListener('click',deletecard));
+//loop over them and add listener
+ buttons.forEach(button=>button.addEventListener('click',deletecard));
