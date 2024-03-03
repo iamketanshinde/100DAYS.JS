@@ -16,21 +16,30 @@ butts.addEventListener('click',clicked);
 
 const buybutton=document.querySelectorAll('button.buy');
 
-function buyitem(){
-    console.log('buying item !!');
-}
-
-function handleclick(anythingwewant){
-    console.log('hey we are bunding buttons');
-    anythingwewant.addEventListener('click',buyitem)
+function handlebuyitem(event){
+ console.log('hey item is collected');
+ console.log(event.target.dataset.price);
 };
+ buybutton.forEach(function(buybutton){
+    buybutton.addEventListener('click',handlebuyitem)
+ });
 
-buybutton.forEach(handleclick);
+
+// function buyitem(){
+//     console.log('buying item !!');
+// }
+
+// function handleclick(anythingwewant){
+//     console.log('hey we are binding buttons');
+//     anythingwewant.addEventListener('click',buyitem)
+// };
+
+// buybutton.forEach(handleclick);``
 
 
 //arrow function
-buybutton.forEach(button=>{
-    button.addEventListener('click',()=>{
-        console.log('you clicked it!!!');
-    });
-});
+// buybutton.forEach(button=>{
+//     button.addEventListener('click',()=>{
+//         console.log('you clicked it!!!');
+//     });
+// });
