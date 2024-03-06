@@ -1,3 +1,10 @@
+// links are used to change the page
+// buttons aee used for actions that happens inside application 
+
+
+
+
+
 const google=document.querySelector('.google');
 
 google.addEventListener('click',function(event){
@@ -18,3 +25,28 @@ signupform.addEventListener('submit',function(event){
     event.preventDefault();
   }
 });
+
+
+
+function logEvent(event){
+    console.log(event.type);
+    console.log(event.currentTarget.value);
+}
+signupform.name.addEventListener('keyup',logEvent);
+signupform.name.addEventListener('keydown',logEvent);
+signupform.name.addEventListener('blur',logEvent);
+signupform.name.addEventListener('focus',logEvent);
+
+
+
+const pht=document.querySelector('.photoimg');
+
+function handleimgclick(event){
+    if(event.type==='click' || event.key === 'Enter'){
+        console.log('hey you enter img');
+    }
+    console.log('hey you click img...!');
+   
+}
+ pht.addEventListener('click',handleimgclick);
+ pht.addEventListener('keyup',handleimgclick)
