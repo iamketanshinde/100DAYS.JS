@@ -14,7 +14,7 @@ function handleclickbtn(event){
     
     // populate the model with new info
     model.innerHTML = `
-        <img src="${imgsrc.replace('200','300')}" "${imgsrc}"/>
+        <img width="600" height="550" src="${imgsrc.replace('200','300')}" "${imgsrc}"/>
         <p>${desc}</p>
     `;
     
