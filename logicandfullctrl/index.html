@@ -13,7 +13,18 @@
     <p><abbr style="font-size: 50px;">H</abbr>ello</p>
     <p><abbr style="font-size: 50px;">H</abbr>ello</p>
 
-
+    <style>
+        .turt{
+            --x:0px;
+            --y:0px;
+            --rotate:0;
+            --rotate:0;
+            position: relative;
+            transform:translateX(var(--x)) translateY(var(--y)) rotateY(var(--rotate))rotate(var(--rotate));
+            transition: transform 0.2s;
+        }
+    </style>
+    <img src="img/turtle.png" alt="turt" class="turt" width="200">
     <!-- <script>
         function calculatebill(billamount,taxbill=0.13,taxtip=0.15){
             // console.log('calculated bill!');
@@ -22,6 +33,6 @@
         }
         const total=126+(25.20-18.9);
     </script> -->
-    <script src="ifelse.js"></script>
+    <script src="section40.js"></script>
 </body>
 </html>
