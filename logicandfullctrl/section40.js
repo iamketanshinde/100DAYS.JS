@@ -24,18 +24,18 @@ switch(event.key)
         break;
     case 'Arrowdown':
         y = y + 1;
-        rotate=90;
+        rotate=-90;
         break;
     case 'Arrowup':
         y = y - 1;
-        rotate=-90;
+        rotate=90;
         break;
     default:
         console.log('its not working');
 }
 turtle.setAttribute('style',
 `
---rotate:${flipped ? '180deg':'0'}
+--rotateX:${flipped ? '180deg':'0'}
 --x: ${x*speed}px;
 --rotate:${rotate}px;
  --y:${y*speed}deg;`
