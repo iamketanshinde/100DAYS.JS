@@ -43,7 +43,12 @@ const comments=
 
 function deletecomment(id,comments){
     //first find the index of  an array
+    const commentindex=comments.findIndex(comment=>comment.id===id)
     //makee neew array without item in it
+    return[
+        console.log(0,commentindex),
+        console.log(commentindex+1),
+    ]
     //return our new array
 }
 
@@ -89,3 +94,5 @@ console.log(newkait);
 // const pizzaslice = numbers.slice(2,4) //they do not change the orignal data
 // console.log(pizzaslice);
 // console.log(numbers);
+
+
