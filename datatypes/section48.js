@@ -4,6 +4,14 @@ const prices={
     chilligrind:224,
     heatburger:231,
 }
+const meats={
+    beef:7,
+    halwa:3,
+    chicken:4,
+}
+const topping=["hann","mulga","madhe","kunal","khotahe","topis"];
+
+const ordertotal=[200,259,463,423,547,765,744]
 
 const feedback=[
 {Comment:'i love burger', rating:4},
@@ -45,3 +53,43 @@ function filterbyminrating(minrating){
 // const goodviews=feedback.filter(singlefeedback=>singlefeedback.rating>=2);
 const goodviews=feedback.filter(filterbyminrating(4))
 console.table(goodviews);
+
+//find all the rating that talk about filter()
+const burRating =feedback.filter(singlefeedback=>feedback.filter(findbyword('burger')));
+
+
+console.table(burRating);
+
+//reemove the ne  starr rating however you like
+const singlerating=feedback.filter(single=>single.rating!== 1);
+console.table(singlerating);
+
+
+// check at leats their is 5 of one type of meat their by some()
+const onetypemeat= Object.values(meats).some(meatvalue=>meatvalue>=4);
+console.table(onetypemeat);
+
+//make sure we have  at least 3 of every meat with every()
+const onetypemeatthree= Object.values(meats).some(meatvalue=>meatvalue>=3);
+console.table(onetypemeatthree);
+
+//sort the toppping alphabetically wuth sort()
+const numbers=[1,3,5,7,100,150]
+const sorted=numbers.sort((firstsite,secondsite)=> firstsite-secondsite);
+console.log(sorted);
+
+//sort the order total most expensive to leeast with sort()
+function numbersort(a,b){
+    return a-b
+};
+console.log(ordertotal.sort(numbersort));
+
+
+
+//sort the prices
+ const sortedprice=Object.entries(prices).sort(function (a,b){
+    const aprice=a[1];
+    const bprice=b[1];
+    return aprice-bprice;
+ });
+ console.table(sortedprice);
