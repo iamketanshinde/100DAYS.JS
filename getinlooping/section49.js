@@ -47,3 +47,42 @@ const orderTotals = [342, 1002, 523, 34, 634, 854, 1644, 2222];
 
 const ordertotal=orderTotals.map(total =>total*1.13);
 console.log(ordertotal);
+
+
+const people = [
+    {
+      birthday: 'April 22, 1993',
+      names: {
+        first: 'Keith',
+        last: 'Buckley'
+      }
+    },
+    {
+      birthday: 'January 3, 1975',
+      names: {
+        first: 'Larry',
+        last: 'Heep'
+      }
+    },
+    {
+      birthday: 'February 12, 1944',
+      names: {
+        first: 'Linda',
+        last: 'Bermeer'
+      }
+    }
+  ];
+
+  const callperson=people.map(function(person){
+    console.log(person);
+//time stamp()
+    const brithday=new Date(person.birthday).getTime();
+    //now timestamp  
+    const now=Date.now();
+    const age=Math.floor((now-brithday) / 31536000000);
+    console.log(age);
+    // console.log(brithday,now);
+    //get their bd
+    // figure out how old they are
+    // returnn their full name and bday
+  })
