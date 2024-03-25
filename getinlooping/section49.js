@@ -80,9 +80,85 @@ const people = [
     //now timestamp  
     const now=Date.now();
     const age=Math.floor((now-brithday) / 31536000000);
-    console.log(age);
+  return {
+    age,
+    name:`${person.names.first}${person.names.last}`
+  }
     // console.log(brithday,now);
     //get their bd
     // figure out how old they are
     // returnn their full name and bday
-  })
+  });
+  console.table(callperson);
+
+  //filter will return actual thing wht yu want
+  const over40=callperson.filter(person=> person.age> 40 );
+  console.table(over40);
+
+  const students = [
+    {
+      id: '11ce',
+      first_name: 'Dall',
+      last_name: 'Puckring',
+    },
+    {
+      id: '2958',
+      first_name: 'Margarete',
+      last_name: 'Brandi',
+    },
+    {
+      id: '565a',
+      first_name: 'Bendicty',
+      last_name: 'Woodage',
+    },
+    {
+      id: '3a16',
+      first_name: 'Micki',
+      last_name: 'Mattes',
+    },
+    {
+      id: 'f396',
+      first_name: 'Flory',
+      last_name: 'Gladeche',
+    },
+    {
+      id: 'de5f',
+      first_name: 'Jamill',
+      last_name: 'Emilien',
+    },
+    {
+      id: '54cb',
+      first_name: 'Brett',
+      last_name: 'Aizikowitz',
+    },
+    {
+      id: '9135',
+      first_name: 'Lorry',
+      last_name: 'Smallman',
+    },
+    {
+      id: '978f',
+      first_name: 'Gilly',
+      last_name: 'Flott',
+    },
+  ];
+
+
+
+
+  function findbyid(id){
+    return function isstudent(student){
+        return student.id===id;
+    }
+  };
+
+
+  function prop(prop,propbyname){
+    return function istudent(student){
+        return student[prop]===propbyname;
+    }
+  }
+  const student=students.find(findbyid('54cb'));
+  const student2=students.find(prop('first_name','Micki'));
+  console.log(student);
+  console.log(student2);
