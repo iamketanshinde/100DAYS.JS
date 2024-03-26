@@ -162,3 +162,108 @@ const people = [
   const student2=students.find(prop('first_name','Micki'));
   console.log(student);
   console.log(student2);
+
+
+
+
+  //reduce
+  console.clear();
+
+  function tallyvalue(tally,currentvalue){
+    console.log(`the tally is ${tally}`);
+    console.log(`the current value is ${currentvalue}`);
+    console.log('-------');
+    return tally+currentvalue;
+  }
+
+  const ordertally=orderTotals.reduce(tallyvalue,0);
+  console.log(ordertally);
+
+  const inventory = [
+    { type: 'shirt', price: 4000 },
+    { type: 'pants', price: 4532 },
+    { type: 'socks', price: 234 },
+    { type: 'shirt', price: 2343 },
+    { type: 'pants', price: 2343 },
+    { type: 'socks', price: 542 },
+    { type: 'pants', price: 123 },
+  ];
+
+
+function inventorytally(totals,item){
+    console.log(`loooping item ${item.type}`);
+
+    //increment the type by one
+    totals[item.type ] = totals[item.type ]+ 1 || 1;
+
+
+    // if(totals.shirt){
+    //     totals.shirt=totals.shirt + 1;
+
+    //     //total.shirt++;
+    // }else{
+    //     totals.shirt = 1;
+    // }
+
+                                    //instead of if braces we can try this
+    totals.shirt ? totals.shirt + 1 : totals.shirt = 1;
+
+    //return total so the next loop can we use
+    return totals;
+};
+
+const orderpantshirt=inventory.reduce(inventorytally,{})
+console.log(orderpantshirt);
+
+
+const inventacc=inventory.reduce((acc,item)=>acc+item.price,0)
+
+console.log(inventacc);
+
+
+
+
+//reduce exercise
+const text=`
+The reduce() method of Array instances executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+
+The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
+
+Try it
+
+Syntax
+JS
+Copy to Clipboard
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
+Parameters
+callbackFn
+A function to execute for each element in the array. Its return value becomes the value of the accumulator parameter on the next invocation of callbackFn. For the last invocation, the return value becomes the return value of reduce(). The function is called with the following arguments:
+
+accumulator
+The value resulting from the previous call to callbackFn. On the first call, its value is initialValue if the latter is specified; otherwise its value is array[0].
+
+currentValue
+The value of the current element. On the first call, its value is array[0] if initialValue is specified; otherwise its value is array[1].
+
+currentIndex
+The index position of currentValue in the array. On the first call, its value is 0 if initialValue is specified, otherwise 1.
+
+array
+The array reduce() was called upon.
+
+initialValue Optional
+A value to which accumulator is initialized the first time the callback is called. If initialValue is specified, callbackFn starts executing with the first value in the array as currentValue. If initialValue is not specified, accumulator is initialized to the first value in the array, and callbackFn starts executing with the second value in the array as currentValue. In this case, if the array is empty (so that there's no first value to return as accumulator), an error is thrown.
+`;
+const everything=text.split('')
+
+const result=everything.filter(char=>{
+    //if that char is a-zA-Z0-9 then we want to keep it 
+    if (char.match(/[a-zA-Z0-9]/)){
+        return true;
+    }else{
+        return false;
+    }
+})
+
+
