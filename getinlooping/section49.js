@@ -255,15 +255,34 @@ The array reduce() was called upon.
 initialValue Optional
 A value to which accumulator is initialized the first time the callback is called. If initialValue is specified, callbackFn starts executing with the first value in the array as currentValue. If initialValue is not specified, accumulator is initialized to the first value in the array, and callbackFn starts executing with the second value in the array as currentValue. In this case, if the array is empty (so that there's no first value to return as accumulator), an error is thrown.
 `;
-const everything=text.split('')
 
-const result=everything.filter(char=>{
-    //if that char is a-zA-Z0-9 then we want to keep it 
-    if (char.match(/[a-zA-Z0-9]/)){
-        return true;
-    }else{
-        return false;
-    }
-})
+
+function isvalid(char){
+   return char.match(/[a-z0-9]/)
+};
+
+
+const lowercase=char=>char.toLowerCase();
+
+
+function instancecounter(counts,char){
+    counts[char] ? 
+    //if exist 
+    counts[char] = counts[char] + 1 :
+    //if doesnot
+     counts[char] = 1;
+
+     return counts
+}
+const result=text
+.split('') //split each array into an  item of an array
+.filter(isvalid)// for valid char
+.map(lowercase)//convert every letter to lowercase
+.reduce(instancecounter,{})
+function sortletter(a,b){
+    a[1] - b[1];
+};
+const sortbyvalue=Object.entries(result).sort(sortletter);
+console.log(sortbyvalue);
 
 
